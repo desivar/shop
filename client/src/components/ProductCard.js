@@ -1,6 +1,7 @@
+// src/components/ProductCard.js
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './ProductCard.css';
+import Link from 'next/link'; // Import Link from Next.js
+import './ProductCard.css'; // Ensure this path is correct
 
 export default function ProductCard({ product }) {
   return (
@@ -17,8 +18,8 @@ export default function ProductCard({ product }) {
           <span className="stars">★★★★☆</span>
           <span className="rating-count">({product.reviewCount} reviews)</span>
         </div>
-        <Link to={`/product/${product.id}`} className="view-product-btn">
-          View Product
+        <Link href={`/product/${product.id}`} className="view-product-btn">
+          <a>View Product</a> {/* Wrap the text in an <a> tag */}
         </Link>
       </div>
     </div>
